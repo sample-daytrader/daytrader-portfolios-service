@@ -28,6 +28,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 //import org.springframework.context.annotation.Configuration;
 //import org.springframework.context.annotation.PropertySource;
 import com.ibm.sample.daytrader.portfolios.entities.QuoteDataBean;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 /**
@@ -51,9 +52,9 @@ public class QuotesRemoteCallService extends BaseRemoteCallService
 	}
 
 	//
-//  - Naming convention based service discovery 
-	private static String quotesServiceRoute = System.getenv("DAYTRADER_QUOTES_SERVICE");
-
+//  - Naming convention based service discovery
+	@Value("${daytrader.services.quotes}")
+	private static String quotesServiceRoute;
 	/**
 	 * 
 	 * @see TradeServices#getQuote(String)
