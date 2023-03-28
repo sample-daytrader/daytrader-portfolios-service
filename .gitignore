@@ -27,7 +27,6 @@ hs_err_pid*
 .vscode
 .gradle
 .DS_Store
-.DS_Store
 *.iml
 target/*
 target/**/*
